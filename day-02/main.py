@@ -1,7 +1,7 @@
 from typing import List
 
 
-def part_1(input: str) -> None:
+def part_1(input: List[List[int]]) -> int:
     total = 0
     for row in input:
         if is_safe(row):
@@ -9,7 +9,7 @@ def part_1(input: str) -> None:
     return total
 
 
-def part_2(input: str) -> None:
+def part_2(input: List[List[int]]) -> int:
     total = 0
     for row in input:
         if is_safe(row):
