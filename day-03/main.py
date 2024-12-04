@@ -1,11 +1,11 @@
 import re
 
 
-def part_1(input: str) -> None:
+def part_1(input: str) -> int:
     return sum([int(x) * int(y) for x, y in re.findall(r"mul\((\d+)\,(\d+)\)", input)])
 
 
-def part_2(input: str) -> None:
+def part_2(input: str) -> int:
     total = 0
     enabled = True
     for x, y, do, dont in re.findall(
