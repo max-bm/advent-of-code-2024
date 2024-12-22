@@ -43,8 +43,6 @@ def a_star_search(
 
     while open:
         g, _, current, d, path = heapq.heappop(open)
-        # print("Current: ", current)
-        # print("Path to current: ", path)
         if g > dist[current, d]:
             continue
         else:
@@ -53,9 +51,7 @@ def a_star_search(
             return g
         for r, v in (1, 1), (+1j, 1), (-1j, 1):
             new_g, t, next, new_d = g + v, t + 1, current + d * r, d * r
-            # print("Next: ", next)
             if next not in maze or maze[next] == "#":
-                # print("Invalid.")
                 continue
             if next not in visited:
                 heapq.heappush(open, (new_g, t, next, new_d, path + [next]))
